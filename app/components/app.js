@@ -1,11 +1,8 @@
 import React from 'react';
 import NavBar from './NavBar';
 import { Switch, Route } from 'react-router-dom'
-// import Landing from './components/Landing'
-// import Documentation from './components/Documentation'
 import AboutMe from './AboutMe'
-// import ProjectLanding from './components/Project/ProjectLanding'
-// import Technology from './components/technologies/TechLanding'
+import Technologies from './Tech'
 
 const App = () => {
   return (
@@ -13,9 +10,9 @@ const App = () => {
       <NavBar />
         <Switch>
           <Route exact path="/" component={AboutMe} />
+          <Route path="/tech" component={Technologies} />
           { /* 
           <Route path="/projects" component={ProjectLanding} />
-          <Route path="/technology" component={Technology} />
           */}
         </Switch> 
     </div>

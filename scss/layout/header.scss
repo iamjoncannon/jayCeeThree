@@ -1,0 +1,127 @@
+.header {
+
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0vh;
+    padding-top: 2vh;
+    margin-bottom: 3vh;
+    background-color: $pale-black;
+    z-index: 2;
+
+    @include tab(){
+        margin-top: 3rem;
+    }
+        
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 400;
+        
+        .main {
+            color: white;
+            padding: 0;
+            font-weight: bold;
+            
+            @include cell(){
+                font-size: 8rem;
+            }
+            @include tab(){
+                font-size: 3rem;  
+            }
+        }
+        
+        .sub {
+            color: $main-gold;
+            position: relative;
+
+            @include cell(){
+                font-size: 4.5rem;
+                bottom: 4rem;
+                margin-bottom: -4rem;
+            }
+
+            @include tab(){
+                font-size: 2rem;
+                bottom: 1.5rem;
+            }
+        }
+    }
+
+    .main-nav {
+        display: flex;
+   
+        @include cell(){
+            margin-top: -3rem;
+        }
+
+        @include tab(){
+        
+        }
+
+    }
+
+    .nav-btn {
+        color: $greyish;
+        text-transform: capitalize;
+        text-decoration: none;
+        @include flex-center;
+
+        &:hover {
+            opacity: .5;
+        }
+        
+        @include cell(){
+            font-size: 4.6rem;
+            width: 33%;
+        }
+
+        @include tab(){
+            width: 33%;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
+.icons{
+
+    position: fixed;
+    top: 1vh;
+    right: 1vh;
+
+    display: flex;
+    align-items: center;
+
+    @include cell(){
+        visibility: hidden;
+    }    
+    
+    @include tab(){
+
+    }
+
+    i {
+        
+        margin-right: 3vh;
+        color: white;
+        
+        &:hover{
+            opacity: .5;
+        }
+    }
+
+    img {
+
+        width: 4.5rem;
+        position: relative;
+        top: .4vh;
+
+        &:hover{
+            opacity: .5;
+        }
+    }
+}

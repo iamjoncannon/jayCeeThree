@@ -5,8 +5,6 @@ export default function AboutMe (props){
   return (
 
     <div className="about-me">
-   
-
       <div className="title-text">
         <span>About Me</span>
       </div>
@@ -15,7 +13,7 @@ export default function AboutMe (props){
 
       <img src="https://jayceecodesphotos.s3.amazonaws.com/me.jpg" />
       
-      <span>
+      <span className="copy-text">
 
         <p>Jonathan Cannon is a software engineer living and working in Brooklyn, NY. He holds a Bachelor's Degree in Political Science from the University of Chicago.</p>
 

@@ -1,25 +1,53 @@
-html {
-  font-size: 62.5%; }
+.title-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: -1.5px 0 #979797, 0 1.5px #979797, 1.5px 0 #979797, 0 -1.5px #979797; }
+  @media only screen and (max-device-width: 600px) {
+    .title-text {
+      font-size: 10rem; } }
+  @media only screen and (min-device-width: 601px) {
+    .title-text {
+      font-size: 4rem; } }
 
-body {
-  margin: 0;
-  background-color: #1B1B1B;
-  font-family: 'Nunito Sans', sans-serif;
-  line-height: 1.5; }
+.section-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: -1.5px 0 #979797, 0 1.5px #979797, 1.5px 0 #979797, 0 -1.5px #979797; }
+  @media only screen and (max-device-width: 600px) {
+    .section-text {
+      font-size: 7.5rem; } }
+  @media only screen and (min-device-width: 601px) {
+    .section-text {
+      font-size: 3rem; } }
 
-img {
-  filter: grayscale(0.7); }
+.copy-text {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: justify; }
+  @media only screen and (max-device-width: 600px) {
+    .copy-text {
+      font-size: 5rem; } }
+  @media only screen and (min-device-width: 601px) {
+    .copy-text {
+      font-size: 2rem; } }
 
-span {
-  cursor: auto; }
+.sub-text {
+  color: rgba(255, 255, 255, 0.7); }
+  @media only screen and (max-device-width: 600px) {
+    .sub-text {
+      font-size: 3.5rem; } }
 
 .header {
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
-  top: 0;
-  width: 100%;
+  position: sticky;
+  top: 0vh;
+  padding-top: 2vh;
   margin-bottom: 3vh;
   background-color: #1B1B1B;
   z-index: 2; }
@@ -59,7 +87,7 @@ span {
       .header .main-nav {
         margin-top: -3rem; } }
   .header .nav-btn {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: capitalize;
     text-decoration: none;
     display: flex;
@@ -75,55 +103,6 @@ span {
       .header .nav-btn {
         width: 33%;
         font-size: 2.5rem; } }
-
-.about-me {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 75%;
-  margin: auto; }
-  .about-me > div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start; }
-    @media only screen and (max-device-width: 600px) {
-      .about-me > div {
-        flex-direction: column; } }
-  .about-me .title-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: -1.5px 0 #979797, 0 1.5px #979797, 1.5px 0 #979797, 0 -1.5px #979797; }
-    @media only screen and (max-device-width: 600px) {
-      .about-me .title-text {
-        font-size: 10rem; } }
-    @media only screen and (min-device-width: 601px) {
-      .about-me .title-text {
-        font-size: 4rem; } }
-  .about-me p {
-    color: white;
-    text-align: justify; }
-    @media only screen and (max-device-width: 600px) {
-      .about-me p {
-        margin-top: 3rem;
-        font-size: 5rem;
-        width: 65rem; } }
-    @media only screen and (min-device-width: 601px) {
-      .about-me p {
-        font-size: 2rem; } }
-  .about-me img {
-    z-index: 1;
-    border-radius: 10rem; }
-    @media only screen and (max-device-width: 600px) {
-      .about-me img {
-        width: 65rem; } }
-    @media only screen and (min-device-width: 601px) {
-      .about-me img {
-        border-radius: 5rem;
-        width: 30rem;
-        margin: 2vh; } }
 
 .icons {
   position: fixed;
@@ -145,3 +124,104 @@ span {
     top: .4vh; }
     .icons img:hover {
       opacity: .5; }
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  margin: auto; }
+  .about-me > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; }
+    @media only screen and (max-device-width: 600px) {
+      .about-me > div {
+        flex-direction: column; } }
+  .about-me p {
+    text-align: justify; }
+    @media only screen and (max-device-width: 600px) {
+      .about-me p {
+        margin-top: 3rem;
+        width: 65rem; } }
+  .about-me img {
+    z-index: 1;
+    border-radius: 10rem; }
+    @media only screen and (max-device-width: 600px) {
+      .about-me img {
+        width: 65rem; } }
+    @media only screen and (min-device-width: 601px) {
+      .about-me img {
+        border-radius: 5rem;
+        width: 30rem;
+        margin: 2vh; } }
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .tech .sub-text {
+    display: inline-block;
+    text-align: center;
+    width: 75%; }
+    @media only screen and (min-device-width: 601px) {
+      .tech .sub-text {
+        font-size: 2.5rem; } }
+  .tech span:nth-child(1) {
+    margin-top: 2vh; }
+  .tech .section-text {
+    margin-top: 4vh; }
+  .tech .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+  .tech .tech-list-item {
+    background-color: rgba(11, 11, 11, 0.6);
+    margin: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    @media only screen and (max-device-width: 600px) {
+      .tech .tech-list-item {
+        min-height: 40rem; } }
+    @media only screen and (min-device-width: 601px) {
+      .tech .tech-list-item {
+        min-height: 25rem; } }
+    .tech .tech-list-item img {
+      margin-top: 3rem;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem; }
+      @media only screen and (max-device-width: 600px) {
+        .tech .tech-list-item img {
+          width: 30rem; } }
+      @media only screen and (min-device-width: 601px) {
+        .tech .tech-list-item img {
+          width: 15rem; } }
+    .tech .tech-list-item span {
+      color: rgba(255, 255, 255, 0.7); }
+      @media only screen and (max-device-width: 600px) {
+        .tech .tech-list-item span {
+          font-size: 4rem; } }
+      @media only screen and (min-device-width: 601px) {
+        .tech .tech-list-item span {
+          font-size: 2rem; } }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  margin: 0;
+  background-color: #1B1B1B;
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.5; }
+
+img {
+  filter: grayscale(0.6); }
+
+span {
+  cursor: auto; }

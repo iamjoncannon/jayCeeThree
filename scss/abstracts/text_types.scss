@@ -1,0 +1,58 @@
+// classes for text types
+
+.title-text {
+
+    @include flex-center;   
+    color: white;
+    @include gold-text-border;
+
+    @include cell(){
+        font-size: 10rem;
+    }
+
+    @include tab(){
+        font-size: 4rem;
+    }
+}
+
+.section-text {
+
+    @include flex-center;   
+    color: white;
+    @include gold-text-border;
+
+    @include cell(){
+        font-size: 7.5rem;
+    }
+
+    @include tab(){
+        font-size: 3rem;
+    }
+}
+
+.copy-text {
+
+    color: $greyish;
+    text-align: justify;
+    
+    @include cell(){
+    
+        font-size: 5rem;
+    }
+
+    @include tab(){
+
+        font-size: 2rem;
+    }
+}
+
+.sub-text {
+
+    color: $greyish;
+
+    @include cell(){
+    
+        font-size: 3.5rem;
+
+    }
+}

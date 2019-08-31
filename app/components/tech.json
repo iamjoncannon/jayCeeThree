@@ -1,0 +1,26 @@
+{  "strong":
+    [
+    {"name" : "Javascript", "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"},
+    {"name": "React", "img_url": "react.png"},
+    {"name": "Redux", "img_url": "redux.png"},
+    {"name": "Node", "img_url": "node.png"},
+    {"name": "Express", "img_url": "express.png"},
+    {"name": "Git", "img_url": "github_icon.png"}  
+],
+"experience":
+    [
+    {"name": "AWS", "img_url": "aws.png"},
+    {"name": "Sass", "img_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2000px-Sass_Logo_Color.svg.png"},
+    {"name": "Postgres", "img_url": "postgres.png"},
+    {"name": "Python", "img_url": "https://www.stickpng.com/assets/images/5848152fcef1014c0b5e4967.png"},
+    {"name": "Golang", "img_url": "https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png"},
+    {"name": "Mocha", "img_url": "mocha.png"},
+    {"name": "React Native", "img_url": "https://hackernoon.com/hn-images/1*ub1DguhAtkCLvhUGuVGr6w.png"},    
+    {"name": "Bash", "img_url": "bash.png"},
+    {"name": "NPM", "img_url": "npm.png"},
+    {"name": "Redis", "img_url": "https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png"},
+    {"name": "XCode", "img_url": "https://cdn4.iconfinder.com/data/icons/logos-3/426/xcode-512.png"},
+    {"name": "Babel", "img_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Babel_Logo.svg/1200px-Babel_Logo.svg.png"},
+    {"name": "Webpack", "img_url": "https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png"}
+    ]
+}

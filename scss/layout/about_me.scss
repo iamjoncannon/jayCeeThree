@@ -1,0 +1,53 @@
+
+.about-me {
+
+    @include flex-center;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+
+    > div {
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+        @include cell(){ flex-direction: column;}
+
+        @include tab(){
+
+        }
+    }
+
+    p {
+       
+        text-align: justify;
+        
+        @include cell(){
+            
+            margin-top: 3rem;
+            width: 65rem;
+        }
+
+        @include tab(){
+
+         
+        }
+    }
+
+    img {
+        z-index: 1;
+        border-radius: 10rem;
+        
+        @include cell(){
+            
+            width: 65rem;
+        }
+
+        @include tab(){
+            border-radius: 5rem;
+            width: 30rem;
+            margin: 2vh;
+        }
+    }
+}
