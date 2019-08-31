@@ -1,0 +1,129 @@
+.projects-container {
+
+    margin-bottom: 5vh;
+
+    .project-nav {
+
+        @include cell(){
+            margin-bottom: 2vh;
+        }
+    
+        @include tab(){
+            
+        }
+
+        >span {
+            margin-bottom: -1vh
+        }
+
+        .cats {
+
+            @include flex-center-column;
+
+            @include cell(){
+                
+                font-size: 4.5rem;
+                margin-bottom: 3vh;
+
+                .caps-text {
+                    margin-bottom: 2vh;
+                }
+            }
+        
+            @include tab(){
+                
+
+            }
+        }
+    }
+}
+
+.project-each {
+
+    @include flex-center-column;
+
+    a {
+        color: $greyish;
+
+        &:hover{
+            opacity: .5;
+        }
+    }
+
+    img {
+
+        @include cell(){
+            margin-top: 2vh;
+            height: 30rem;
+        }
+    }
+
+    .bottom {
+
+        @include flex-center-column;
+    }
+
+    @include cell(){
+
+        margin-bottom: 5vh;
+
+        span:nth-child(3){
+            margin-top: 1vh;
+        }
+
+    }
+
+    @include tab(){
+        
+
+    }
+
+    i {
+
+        color: white;
+
+        @include cell(){
+            margin-left: 1vh;
+            position: relative;
+            top: .5vh;
+        }
+
+    }
+
+
+    .title-text{
+        color: $greyish;
+        width: 100%;
+        cursor: pointer;
+        
+        @include cell(){
+                    
+            font-size: 7rem;
+            
+        }
+    
+        @include tab(){
+            
+    
+        }
+    }
+
+    .desc-text {
+
+        color: white !important; 
+        display: inline-block;
+        width: 80%;
+
+        @include cell(){
+                    
+            color: $greyish;
+            margin-top: 2vh;        
+            font-size: 2.75vh;    
+        }
+    
+        @include tab(){
+            
+    
+        }
+    }
+}

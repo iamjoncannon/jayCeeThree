@@ -1,16 +1,15 @@
-
 .tech {
 
     @include flex-center-column;
 
-    .sub-text {
+    .desc-text {
         display: inline-block;
         text-align: center;
         width: 75%;
         
         @include cell(){
             
-
+            font-size: 4.5rem;
         }   
 
         @include tab(){

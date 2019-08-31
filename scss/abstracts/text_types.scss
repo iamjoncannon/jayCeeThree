@@ -15,6 +15,12 @@
     }
 }
 
+.caps-text {
+
+    color: $greyish;
+    text-transform: uppercase;
+}
+
 .section-text {
 
     @include flex-center;   
@@ -46,7 +52,7 @@
     }
 }
 
-.sub-text {
+.desc-text {
 
     color: $greyish;
 

@@ -2,9 +2,8 @@ import React from 'react';
 const technologies = require('./tech.json')
 import TechItem from "./TechItem"
 
-console.log(technologies.strong)
-
 export default function Tech (props){
+  
   window.scrollTo(0, 0);
 
   return (
@@ -13,10 +12,10 @@ export default function Tech (props){
 
       <span className="title-text">Technologies</span>
       
-      <span className="sub-text">Technologies used in previous projects</span>
+      <span className="desc-text">Technologies used in previous projects</span>
       
       <span className="section-text">Strong</span>
-      <span className="sub-text">
+      <span className="desc-text">
         Used in multiple previous projects- very familiar and capable 
       </span>
       <div className="tech-list">
@@ -27,7 +26,7 @@ export default function Tech (props){
       </div>
 
       <span className="section-text">Experience</span>
-      <span className="sub-text">
+      <span className="desc-text">
       Used in previous projects- some familiarity and experience  
       </span>
       <div className="tech-list">

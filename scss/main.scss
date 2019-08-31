@@ -4,6 +4,7 @@
 @import "layout/header";
 @import "layout/about_me";
 @import "layout/tech";
+@import "layout/projects";
 
 html {
     font-size: 62.5%;
@@ -20,11 +21,9 @@ body {
 
 img {
 
-    filter: grayscale(.6);
+    filter: grayscale(.3);
 }
 
 span {
     cursor: auto;
 }
-
-

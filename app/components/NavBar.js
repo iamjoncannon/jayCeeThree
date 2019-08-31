@@ -22,13 +22,13 @@ export default function NavBar (props){
       </div>
 
       <div className="main-nav">
-          <Link className="nav-btn" to="/">
+          <Link className="nav-btn caps-text" to="/">
               ABOUT
           </Link>
-          <Link className="nav-btn" to="/tech">
+          <Link className="nav-btn caps-text" to="/tech">
               TECHNOLOGIES 
           </Link>
-          <Link className="nav-btn" to="projects">
+          <Link className="nav-btn caps-text" to="projects">
               PROJECTS
           </Link>
       </div>

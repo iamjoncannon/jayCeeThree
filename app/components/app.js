@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import { Switch, Route } from 'react-router-dom'
 import AboutMe from './AboutMe'
 import Technologies from './Tech'
+import Projects from './Projects'
 
 const App = () => {
   return (
@@ -11,9 +12,9 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={AboutMe} />
           <Route path="/tech" component={Technologies} />
-          { /* 
-          <Route path="/projects" component={ProjectLanding} />
-          */}
+          
+          <Route path="/projects" component={Projects} />
+          
         </Switch> 
     </div>
   );

@@ -108,6 +108,7 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function AboutMe(props) {
+  window.scrollTo(0, 0);
 
   return _react2.default.createElement(
     "div",
@@ -205,17 +206,17 @@ function NavBar(props) {
       { className: 'main-nav' },
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { className: 'nav-btn', to: '/' },
+        { className: 'nav-btn caps-text', to: '/' },
         'ABOUT'
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { className: 'nav-btn', to: '/tech' },
+        { className: 'nav-btn caps-text', to: '/tech' },
         'TECHNOLOGIES'
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { className: 'nav-btn', to: 'projects' },
+        { className: 'nav-btn caps-text', to: 'projects' },
         'PROJECTS'
       )
     ),
@@ -241,6 +242,349 @@ function NavBar(props) {
     )
   );
 };
+
+/***/ }),
+
+/***/ "./app/components/Other_Fields.js":
+/*!****************************************!*\
+  !*** ./app/components/Other_Fields.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var OtherField = function OtherField(props) {
+
+    var field = Object.entries(props.field)[0];
+
+    return _react2.default.createElement(
+        "div",
+        { className: "desc-text" },
+        _react2.default.createElement(
+            "a",
+            { href: field[1], target: "_blank" },
+            " ",
+            field[0],
+            " "
+        )
+    );
+};
+
+exports.default = OtherField;
+
+/***/ }),
+
+/***/ "./app/components/Project-Item.js":
+/*!****************************************!*\
+  !*** ./app/components/Project-Item.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Other_Fields = __webpack_require__(/*! ./Other_Fields */ "./app/components/Other_Fields.js");
+
+var _Other_Fields2 = _interopRequireDefault(_Other_Fields);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Project = function (_React$Component) {
+    _inherits(Project, _React$Component);
+
+    function Project(props) {
+        _classCallCheck(this, Project);
+
+        var _this = _possibleConstructorReturn(this, (Project.__proto__ || Object.getPrototypeOf(Project)).call(this, props));
+
+        _this.handleOpen = function () {
+            _this.setState({ open: !_this.state.open });
+
+            _this.props.id > 5 && window.scrollTo(0, document.body.scrollHeight);
+        };
+
+        _this.state = {
+            open: _this.props.id === 0
+        };
+        return _this;
+    }
+
+    _createClass(Project, [{
+        key: "render",
+        value: function render() {
+            var _props = this.props,
+                project = _props.project,
+                name = _props.name;
+
+
+            var selected = { "opacity": ".5" };
+
+            return _react2.default.createElement(
+                "div",
+                { className: "project-each" },
+                _react2.default.createElement(
+                    "span",
+                    { className: "title-text",
+                        onClick: this.handleOpen,
+                        style: this.state.open ? selected : {}
+                    },
+                    name
+                ),
+                this.state.open && _react2.default.createElement(
+                    "div",
+                    { className: "bottom" },
+                    project.back_img && _react2.default.createElement("img", { src: project.back_img }),
+                    _react2.default.createElement(
+                        "span",
+                        { className: "desc-text" },
+                        project.desc
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        { className: "desc-text" },
+                        _react2.default.createElement(
+                            "b",
+                            null,
+                            "Technologies:"
+                        ),
+                        " ",
+                        project.Technologies
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "desc-text" },
+                        _react2.default.createElement(
+                            "span",
+                            null,
+                            "Codebase:"
+                        ),
+                        _react2.default.createElement(
+                            "a",
+                            { href: project.GH_url, target: "_blank" },
+                            _react2.default.createElement("i", { className: "fab fa-github fa-2x project-GH" })
+                        )
+                    ),
+                    project.other_fields.length > 0 ? project.other_fields.map(function (thisOtherField) {
+                        return _react2.default.createElement(_Other_Fields2.default, { field: thisOtherField });
+                    }) : ""
+                )
+            );
+        }
+    }]);
+
+    return Project;
+}(_react2.default.Component);
+
+exports.default = Project;
+
+/***/ }),
+
+/***/ "./app/components/Projects.js":
+/*!************************************!*\
+  !*** ./app/components/Projects.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ProjectItem = __webpack_require__(/*! ./Project-Item */ "./app/components/Project-Item.js");
+
+var _ProjectItem2 = _interopRequireDefault(_ProjectItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var projects = __webpack_require__(/*! ./projects.json */ "./app/components/projects.json");
+
+var ProjectContainer = function (_React$Component) {
+    _inherits(ProjectContainer, _React$Component);
+
+    function ProjectContainer(props) {
+        _classCallCheck(this, ProjectContainer);
+
+        var _this = _possibleConstructorReturn(this, (ProjectContainer.__proto__ || Object.getPrototypeOf(ProjectContainer)).call(this, props));
+
+        _this.toggleCategory = function (cat) {
+            var CategoryFilter = _this.state.CategoryFilter;
+
+
+            if (CategoryFilter.includes(cat)) {
+                // delete from the filter
+
+                var newCategoryFilter = [].concat(_toConsumableArray(CategoryFilter)).filter(function (currentCat) {
+                    return currentCat !== cat;
+                });
+
+                _this.setState({
+
+                    CategoryFilter: newCategoryFilter
+                });
+            } else {
+                // add to the filter
+
+                _this.setState({
+                    CategoryFilter: [].concat(_toConsumableArray(CategoryFilter), [cat])
+                });
+            }
+        };
+
+        _this.state = {
+
+            CategoryFilter: ["FE", "BE", "FS"]
+        };
+        return _this;
+    }
+
+    _createClass(ProjectContainer, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            window.scrollTo(0, 0);
+
+            var CategoryFilter = this.state.CategoryFilter;
+
+
+            var selected = { "opacity": ".9", "backgroundColor": "rgba(255,255,255,.1)" };
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'projects-container' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'project-nav' },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'title-text' },
+                        ' Projects '
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'cats' },
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'caps-text',
+                                onClick: function onClick() {
+                                    return _this2.toggleCategory("FS");
+                                },
+                                style: CategoryFilter.includes("FS") ? selected : {}
+                            },
+                            'full-stack'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'caps-text',
+                                onClick: function onClick() {
+                                    return _this2.toggleCategory("FE");
+                                },
+                                style: CategoryFilter.includes("FE") ? selected : {}
+                            },
+                            'front-end'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'caps-text',
+                                onClick: function onClick() {
+                                    return _this2.toggleCategory("BE");
+                                },
+                                style: CategoryFilter.includes("BE") ? selected : {}
+                            },
+                            'back-end'
+                        )
+                    )
+                ),
+                projects.filter(function (thisProject) {
+                    var _iteratorNormalCompletion = true;
+                    var _didIteratorError = false;
+                    var _iteratorError = undefined;
+
+                    try {
+
+                        for (var _iterator = thisProject.cat[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                            var cat = _step.value;
+
+
+                            if (CategoryFilter.includes(cat)) {
+
+                                return true;
+                            }
+                        }
+                    } catch (err) {
+                        _didIteratorError = true;
+                        _iteratorError = err;
+                    } finally {
+                        try {
+                            if (!_iteratorNormalCompletion && _iterator.return) {
+                                _iterator.return();
+                            }
+                        } finally {
+                            if (_didIteratorError) {
+                                throw _iteratorError;
+                            }
+                        }
+                    }
+
+                    return false;
+                }).map(function (thisProject, i) {
+
+                    return _react2.default.createElement(_ProjectItem2.default, { key: i, id: i, name: thisProject.id, project: thisProject });
+                })
+            );
+        }
+    }]);
+
+    return ProjectContainer;
+}(_react2.default.Component);
+
+exports.default = ProjectContainer;
 
 /***/ }),
 
@@ -270,11 +614,8 @@ var _TechItem2 = _interopRequireDefault(_TechItem);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var technologies = __webpack_require__(/*! ./tech.json */ "./app/components/tech.json");
-
-
-console.log(technologies.strong);
-
 function Tech(props) {
+
   window.scrollTo(0, 0);
 
   return _react2.default.createElement(
@@ -287,7 +628,7 @@ function Tech(props) {
     ),
     _react2.default.createElement(
       'span',
-      { className: 'sub-text' },
+      { className: 'desc-text' },
       'Technologies used in previous projects'
     ),
     _react2.default.createElement(
@@ -297,7 +638,7 @@ function Tech(props) {
     ),
     _react2.default.createElement(
       'span',
-      { className: 'sub-text' },
+      { className: 'desc-text' },
       'Used in multiple previous projects- very familiar and capable'
     ),
     _react2.default.createElement(
@@ -314,7 +655,7 @@ function Tech(props) {
     ),
     _react2.default.createElement(
       'span',
-      { className: 'sub-text' },
+      { className: 'desc-text' },
       'Used in previous projects- some familiarity and experience'
     ),
     _react2.default.createElement(
@@ -411,6 +752,10 @@ var _Tech = __webpack_require__(/*! ./Tech */ "./app/components/Tech.js");
 
 var _Tech2 = _interopRequireDefault(_Tech);
 
+var _Projects = __webpack_require__(/*! ./Projects */ "./app/components/Projects.js");
+
+var _Projects2 = _interopRequireDefault(_Projects);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -422,12 +767,24 @@ var App = function App() {
       _reactRouterDom.Switch,
       null,
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _AboutMe2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/tech', component: _Tech2.default })
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/tech', component: _Tech2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/projects', component: _Projects2.default })
     )
   );
 };
 
 exports.default = App;
+
+/***/ }),
+
+/***/ "./app/components/projects.json":
+/*!**************************************!*\
+  !*** ./app/components/projects.json ***!
+  \**************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"id\":\"Redux Genie\",\"back_img\":\"https://authy.com/wp-content/uploads/npm-logo.png\",\"cat\":[\"FE\"],\"desc\":\"Published Node.js command line developer tool that automates writing and managing Redux code. Connects React component to Redux store with the React-Redux library using Babel parsing.   My contribution: Designed and implemented global command line methods; diffing routine to update store from yml file; asynchronous Mocha/Chai testing process to simulate command line inputs to the program and validate results; Babel parsing functionality.\",\"GH_url\":\"https://github.com/lovely-libras/redux-genie\",\"Technologies\":\"Node.js, Babel, Redux, React, Mocha/Chai, AWS EC2/S3\",\"other_fields\":[{\"Presentation at React NYC, May 23, 2019\":\"https://www.meetup.com/ReactNYC/events/260124464/\"},{\"Download NPM package\":\"https://www.npmjs.com/package/redux-genie\"},{\"Documentation Website\":\"http://redux-genie.net/\"}]},{\"id\":\"Maple\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/EverGrow/master/screenshot.png\",\"cat\":[\"FE\"],\"desc\":\"React Native iPad dashboard tool that helps teachers organize social emotional learning in the classroom. My contribution: bootstrapped React Native project and completed dependency installation and collaboration workflow with team member. Translated UX wireframes and visual design into React Native style API. Helped design total application structure. Pair programmed with team member.\",\"GH_url\":\"https://github.com/iamjoncannon/EverGrow\",\"Technologies\":\"React Native, XCode, Sketch\",\"other_fields\":[{\"Walkthrough of iPad app\":\"https://player.vimeo.com/video/354000529\"}]},{\"id\":\"Golang Stock Portfolio App\",\"back_img\":\"https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png\",\"cat\":[\"FE\",\"BE\",\"FS\"],\"desc\":\"React fullstack application that displays portfolio and stock prices in real time. Backend api in Golang, using PostgreSQL and Redis caching. Stateless authentication with JSON Web Tokens. Simulated “ACID” trade SQL transaction with prepared statements.\",\"GH_url\":\"https://github.com/iamjoncannon/StockApp\",\"Technologies\":\"Golang, Redis, React, PostgreSQL, JWT, AWS EC2, socket.io, IEX API, bcrypt\",\"other_fields\":[{\"Deployed Site\":\"http://ttp.joncannon.codes/\"}]},{\"id\":\"TownHall Slackbot\",\"back_img\":\"https://cdn.freebiesupply.com/logos/large/2x/slack-logo-icon.png\",\"cat\":[\"BE\"],\"desc\":\"Deployed a Slackbot on a Golang server to chat with the office during a monthly “Town Hall” meeting at internship.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"Golang, Slack API, Certbot (SSL), AWS EC2\",\"other_fields\":[]},{\"id\":\"Concept Parser\",\"cat\":[\"FE\",\"BE\",\"FS\"],\"desc\":\"React data visualization tool to render concepts contained within texts as graph structure. Deployed fullstack web application displays Hegel's Science of Logic, with ~5000 vertices and ~350,000 edges.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"React, D3 (react-force-graph), Node.js/Express, PM2, PostgreSQL, AWS EC2, Webpack\",\"other_fields\":[{\"Presentation\":\"https://www.youtube.com/watch?v=sPflAhvZgrU&feature=youtu.be\"},{\"Deployed Site\":\"http://concept.joncannon.codes/\"}]},{\"id\":\"FaceSwap Challenge\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/bermi_faceswap_challenge/master/jaylow.png\",\"cat\":[\"BE\"],\"desc\":\"Utilized Python Machine Learning library to swap the face of a woman in a cell phone video with Jennifer Lopez. ML training completed on AWS Deep Learning EC2 and S3. Wrote extended README detailing training process. Utilized Scrapy library to source 5000+ photographs from JLo fansites. Extensive use of Bash scripting to automate procedures on remote machine and video processing.\",\"GH_url\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge\",\"Technologies\":\"Python, Scrapy, Flask, AWS EC2/S3, Linux, Bash scripting\",\"other_fields\":[{\"Converted JLo vid\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge/blob/master/bermi_video_converted.mp4?raw=true\"}]},{\"id\":\"This Site- joncannon.codes\",\"cat\":[\"FE\"],\"desc\":\"React/SASS application, static deployed to an S3.\",\"GH_url\":\"https://github.com/iamjoncannon/secondJCCodes.git\",\"Technologies\":\"React, React Router, SASS, AWS (S3)\",\"other_fields\":[]},{\"id\":\"StoryTelling App\",\"cat\":[\"FE\",\"BE\",\"FS\"],\"desc\":\"Designed and built cross-platform “choose your own adventure” storytelling application prototype for web and AppleTV (tvOS). Successfully debugged and compiled application from less supported React Native tvOS codebase\",\"GH_url\":\"\",\"Technologies\":\"React Native, XCode, React, Redux, AWS S3\",\"other_fields\":[]},{\"id\":\"nodeLOM\",\"back_img\":\"https://upload.wikimedia.org/wikipedia/commons/b/bf/Ableton_Live_logo.png\",\"cat\":[\"BE\"],\"desc\":\"Open source driver to connect an Ableton Live session to Node.js server in real-time, utilizing socket.io and Max/MSP. Library included in Max/MSP’s example github repo, 🌟starred🌟 by developers on four continents.\",\"GH_url\":\"https://github.com/iamjoncannon/nodeLOM\",\"Technologies\":\"Node, Ableton Live, Max/MSP\",\"other_fields\":[]}]");
 
 /***/ }),
 
