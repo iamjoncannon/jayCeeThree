@@ -4,6 +4,8 @@
 
     .project-nav {
 
+        @include flex-center-column;
+
         @include cell(){
             margin-bottom: 2vh;
         }
@@ -18,9 +20,11 @@
 
         .cats {
 
-            @include flex-center-column;
-
+            @include button;
+            
             @include cell(){
+
+                @include flex-center-column;
                 
                 font-size: 4.5rem;
                 margin-bottom: 3vh;
@@ -31,8 +35,50 @@
             }
         
             @include tab(){
-                
+                display: flex;
+                width: 100%;
+                justify-content: space-evenly;
+                font-size: 1.5rem;
+                margin-top: 1vh;
 
+                .caps-text {
+                    margin-bottom: 2vh;
+                }
+            }
+
+            @include desk(){
+
+                
+            }
+        }
+
+        .project-selector {
+
+            @include button;
+
+            @include tab(){
+
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                width: 90%;
+                color: $greyish;
+                font-size: 1.5rem;
+
+
+                span {
+                    margin-bottom: .5vh;
+                    display: inline-block;
+                    padding-left: 1vh;
+                    padding-right: 1vh;
+                    background-color: rgba(0,0,0,.1);
+
+                    &:hover{
+                        opacity: .5;
+                    }
+                }
             }
         }
     }
@@ -41,6 +87,25 @@
 .project-each {
 
     @include flex-center-column;
+
+    @include cell(){
+
+        margin-bottom: 5vh;
+
+        span:nth-child(3){
+            margin-top: 1vh;
+        }
+
+    }
+
+    @include tab(){
+
+        margin-bottom: 3vh;
+
+        span {
+            margin-top: 2vh;
+        }
+    }
 
     a {
         color: $greyish;
@@ -56,26 +121,16 @@
             margin-top: 2vh;
             height: 30rem;
         }
+
+        @include tab(){
+            height: 15rem;
+            margin-top: 1vh;
+        }
     }
 
     .bottom {
 
         @include flex-center-column;
-    }
-
-    @include cell(){
-
-        margin-bottom: 5vh;
-
-        span:nth-child(3){
-            margin-top: 1vh;
-        }
-
-    }
-
-    @include tab(){
-        
-
     }
 
     i {
@@ -94,12 +149,16 @@
     .title-text{
         color: $greyish;
         width: 100%;
-        cursor: pointer;
+        @include button;
+
+        &:hover {
+
+            opacity: .6;
+        }
         
         @include cell(){
                     
             font-size: 7rem;
-            
         }
     
         @include tab(){
@@ -122,8 +181,9 @@
         }
     
         @include tab(){
-            
-    
+
+            color: $greyish;
+            font-size: 2.75vh; 
         }
     }
 }

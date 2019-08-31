@@ -442,7 +442,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var projects = __webpack_require__(/*! ./projects.json */ "./app/components/projects.json");
+var Projects = __webpack_require__(/*! ./projects.json */ "./app/components/projects.json");
 
 var ProjectContainer = function (_React$Component) {
     _inherits(ProjectContainer, _React$Component);
@@ -476,9 +476,25 @@ var ProjectContainer = function (_React$Component) {
             }
         };
 
+        _this.handleProjectSelect = function (project) {
+
+            if (_this.state.selectedProject === project) {
+
+                _this.setState({
+                    selectedProject: null
+                });
+            } else {
+
+                _this.setState({
+                    selectedProject: project
+                });
+            }
+        };
+
         _this.state = {
 
-            CategoryFilter: ["FE", "BE", "FS"]
+            CategoryFilter: ["FE", "BE", "FS"],
+            selectedProject: null
         };
         return _this;
     }
@@ -488,12 +504,55 @@ var ProjectContainer = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
+            console.log(window.outerWidth);
+
             window.scrollTo(0, 0);
 
-            var CategoryFilter = this.state.CategoryFilter;
+            var _state = this.state,
+                CategoryFilter = _state.CategoryFilter,
+                selectedProject = _state.selectedProject;
 
 
             var selected = { "opacity": ".9", "backgroundColor": "rgba(255,255,255,.1)" };
+
+            var projects = Projects.filter(function (thisProject) {
+
+                if (selectedProject) {
+
+                    return thisProject.id === selectedProject;
+                }
+
+                var _iteratorNormalCompletion = true;
+                var _didIteratorError = false;
+                var _iteratorError = undefined;
+
+                try {
+                    for (var _iterator = thisProject.cat[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        var cat = _step.value;
+
+
+                        if (CategoryFilter.includes(cat)) {
+
+                            return true;
+                        }
+                    }
+                } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion && _iterator.return) {
+                            _iterator.return();
+                        }
+                    } finally {
+                        if (_didIteratorError) {
+                            throw _iteratorError;
+                        }
+                    }
+                }
+
+                return false;
+            });
 
             return _react2.default.createElement(
                 'div',
@@ -539,41 +598,23 @@ var ProjectContainer = function (_React$Component) {
                             },
                             'back-end'
                         )
+                    ),
+                    window.outerWidth > 600 && _react2.default.createElement(
+                        'div',
+                        { className: 'project-selector' },
+                        projects.map(function (project) {
+
+                            return _react2.default.createElement(
+                                'span',
+                                { onClick: function onClick() {
+                                        return _this2.handleProjectSelect(project.id);
+                                    } },
+                                selectedProject ? "All Projects" : project.id
+                            );
+                        })
                     )
                 ),
-                projects.filter(function (thisProject) {
-                    var _iteratorNormalCompletion = true;
-                    var _didIteratorError = false;
-                    var _iteratorError = undefined;
-
-                    try {
-
-                        for (var _iterator = thisProject.cat[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                            var cat = _step.value;
-
-
-                            if (CategoryFilter.includes(cat)) {
-
-                                return true;
-                            }
-                        }
-                    } catch (err) {
-                        _didIteratorError = true;
-                        _iteratorError = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion && _iterator.return) {
-                                _iterator.return();
-                            }
-                        } finally {
-                            if (_didIteratorError) {
-                                throw _iteratorError;
-                            }
-                        }
-                    }
-
-                    return false;
-                }).map(function (thisProject, i) {
+                projects.map(function (thisProject, i) {
 
                     return _react2.default.createElement(_ProjectItem2.default, { key: i, id: i, name: thisProject.id, project: thisProject });
                 })

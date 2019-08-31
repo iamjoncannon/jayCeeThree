@@ -1,6 +1,6 @@
 import React from "react";
 import Project from './Project-Item'
-const projects = require('./projects.json')
+let Projects = require('./projects.json')
 
 class ProjectContainer extends React.Component {
 
@@ -9,7 +9,8 @@ class ProjectContainer extends React.Component {
 
         this.state = {
 
-            CategoryFilter : ["FE", "BE", "FS"]
+            CategoryFilter : ["FE", "BE", "FS"],
+            selectedProject : null
         }
     }
 
@@ -35,18 +36,57 @@ class ProjectContainer extends React.Component {
         }
     }
 
+    handleProjectSelect = (project) => {
+
+        if(this.state.selectedProject === project){
+
+            this.setState({
+                selectedProject: null
+            })
+
+        }
+        else {
+
+            this.setState({
+                selectedProject : project
+            })
+        }
+    }
+
     render(){
+
+        console.log(window.outerWidth)
 
         window.scrollTo(0, 0);
 
-        const {CategoryFilter} = this.state
+        const {CategoryFilter, selectedProject } = this.state
 
         const selected = {"opacity": ".9", "backgroundColor": "rgba(255,255,255,.1)"}
+
+        let projects = Projects.filter(thisProject => {
+
+            if(selectedProject){
+
+                return thisProject.id === selectedProject
+            }
+                           
+            for (let cat of thisProject.cat){
+               
+                if(CategoryFilter.includes(cat)){
+               
+                    return true
+                }
+            }
+
+            return false
+        })
 
         return (
 
             <div className="projects-container">
+
                     <div className="project-nav">
+
                         <span className="title-text"> Projects </span>
                         <div className="cats">
 
@@ -70,25 +110,28 @@ class ProjectContainer extends React.Component {
                             >
                                 back-end
                             </span>
-                        
                         </div>
 
+                        { window.outerWidth > 600 && 
+                            <div className="project-selector">
+
+                            {projects.map(project=>{
+                                
+                                return(
+                                    <span onClick={()=>this.handleProjectSelect(project.id)}>
+                                        {selectedProject ? "All Projects" : project.id}
+                                        
+                                    </span>
+                                )
+                            })}
+                            
+                            </div>
+                        
+                        }
 
                     </div>
                     
-                    { projects.filter(thisProject => {
-                           
-                            for (let cat of thisProject.cat){
-                               
-                                if(CategoryFilter.includes(cat)){
-                               
-                                    return true
-                                }
-                            }
-
-                            return false
-                        })
-                        .map( (thisProject, i) => {
+                    { projects.map( (thisProject, i) => {
                           
                             return(
                                 <Project key={i} id={i} name={thisProject.id} project={thisProject}/> 

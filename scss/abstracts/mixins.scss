@@ -7,6 +7,11 @@
     align-items: center;
 };
 
+@mixin button{
+    
+    cursor: pointer;
+}
+
 @mixin flex-center-column{
     display: flex;
     flex-direction: column;
@@ -16,7 +21,7 @@
 
 @mixin gold-text-border{
 
-    text-shadow: -1.5px 0 $sec-gold, 0 1.5px $sec-gold, 1.5px 0 $sec-gold, 0 -1.5px $sec-gold;
+    text-shadow: -1px 0 $sec-gold, 0 1px $sec-gold, 1px 0 $sec-gold, 0 -1px $sec-gold;
 }
 
 @mixin cell(){
@@ -33,11 +38,11 @@
 
 // desktop - 1200-1600
 
-// @mixin desk(){
-//     @media only screen and (max-device-width: 1600px) { 
-//         @content 
-//     };    //600px
-// }
+@mixin desk(){
+    @media only screen and (min-device-width: 900px) { 
+        @content 
+    };    //600px
+}
 
 // // big desktop- over 1600
 

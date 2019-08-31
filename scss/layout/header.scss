@@ -6,14 +6,18 @@
     position: -o-sticky;
     position: sticky;
     top: 0vh;
-    padding-top: 2vh;
-    padding-bottom: 1vh;
-    margin-bottom: 3vh;
     background-color: $pale-black;
     z-index: 2;
+    
+    @include cell(){
+        padding-top: 2vh;
+        padding-bottom: 1vh;
+        margin-bottom: 3vh;
+        margin-top: 3rem;
+    }
 
     @include tab(){
-        margin-top: 3rem;
+        
     }
         
     .logo {
