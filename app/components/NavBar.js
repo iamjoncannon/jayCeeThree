@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 export default function NavBar (props){
 
@@ -21,17 +22,24 @@ export default function NavBar (props){
       </div>
 
       <div className="main-nav">
-          <span className="nav-btn">
+          <Link className="nav-btn" to="/">
               ABOUT
-          </span>
-          <span className="nav-btn">
+          </Link>
+          <Link className="nav-btn" to="/tech">
               TECHNOLOGIES 
-          </span>
-          <span className="nav-btn">
+          </Link>
+          <Link className="nav-btn" to="projects">
               PROJECTS
-          </span>
+          </Link>
       </div>
 
+      <div className="icons">
+
+        <a href="https://github.com/iamjoncannon" target="_blank" style={{order: "5"}}><i id="logo" className="fab fa-github fa-5x nav-link-right nav-desktop" /></a>
+        <a href="https://www.linkedin.com/in/iamjoncannon/" target="_blank" style={{order: "6"}}><i id="logo" className="fab fa-linkedin fa-5x nav-link-right nav-desktop" /> </a>
+        <a href="https://globally.ltd/4" target="_blank" style={{order: "7"}}><img src="https://jayceecodesphotos.s3.amazonaws.com/globallyLTD.jpg" className="fab nav-link-right nav-desktop nav-icon-globally"/></a>
+      </div>
+    
     </div>
   );
 };
