@@ -40,7 +40,7 @@
     {
         "id": "TownHall Slackbot",
         "cat": ["BE"],
-        "desc": "Deployed a Slackbot on a Golang server to chat with the office during a monthly “Town Hall” meeting at internship.",
+        "desc": "Deployed a Slackbot on a Golang server to chat with the office during a monthly Town Hall meeting at internship.",
         "GH_url": "https://github.com/iamjoncannon/goSSL",
         "Technologies": "Golang, Slack API, Certbot (SSL), AWS EC2",
         "other_fields": [
@@ -82,7 +82,7 @@
     {
         "id": "StoryTelling App",
         "cat": ["FS"],
-        "desc": "Designed and built cross-platform “choose your own adventure” storytelling application prototype for web and AppleTV (tvOS). Successfully debugged and compiled application from less supported React Native tvOS codebase",
+        "desc": "Designed and built cross-platform choose your own adventure storytelling application prototype for web and AppleTV (tvOS). Successfully debugged and compiled application from less supported React Native tvOS codebase",
         "GH_url": "",
         "Technologies": "React Native, XCode, React, Redux, AWS S3",
         "other_fields": [
