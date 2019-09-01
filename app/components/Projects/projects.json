@@ -72,7 +72,7 @@
     {
         "id": "This Site- joncannon.codes",
         "cat": ["FE"],
-        "desc": "React/SASS application, static deployed to an S3. Responsive design for mobile, tablet, and desktop viewports, with no CSS framework.",
+        "desc": "Translated UX/UI wireframe into React/SASS application, static deployed to an S3. Responsive design for mobile, tablet, and desktop viewports, with no CSS framework.",
         "GH_url": "https://github.com/iamjoncannon/jayCeeThree",
         "Technologies": "React, React Router, SASS, AWS (S3)",
         "other_fields": [
