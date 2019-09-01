@@ -28,7 +28,7 @@
         "id": "Golang Stock Portfolio App",
         "back_img": "https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png",
         "cat": ["FS"],
-        "desc": "React fullstack application that displays portfolio and stock prices in real time. Backend api in Golang, using PostgreSQL and Redis caching. Stateless authentication with JSON Web Tokens. Simulated “ACID” trade SQL transaction with prepared statements.",
+        "desc": "React fullstack application that displays portfolio and stock prices in real time. Backend api in Golang, using PostgreSQL and Redis caching. Stateless authentication with JSON Web Tokens. Simulated ACID trade SQL transaction with prepared statements.",
         "GH_url": "https://github.com/iamjoncannon/StockApp",
         "Technologies": "Golang, Redis, React, PostgreSQL, JWT, AWS EC2, socket.io, IEX API, bcrypt",
         "other_fields": [
