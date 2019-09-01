@@ -44,7 +44,6 @@ class ProjectContainer extends React.PureComponent {
             this.setState({
                 selectedProject: null
             })
-
         }
         else {
 
@@ -87,6 +86,7 @@ class ProjectContainer extends React.PureComponent {
                     <div className="project-nav">
 
                         <span className="title-text"> Projects </span>
+
                         <div className="cats">
 
                             <span className="caps-text" 
@@ -109,6 +109,7 @@ class ProjectContainer extends React.PureComponent {
                             >
                                 back-end
                             </span>
+
                         </div>
 
                         { window.outerWidth > 600 && 
