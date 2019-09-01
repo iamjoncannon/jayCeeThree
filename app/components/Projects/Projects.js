@@ -118,7 +118,7 @@ class ProjectContainer extends React.PureComponent {
                                 
                                 return(
                                     <span key={i} onClick={()=>this.handleProjectSelect(project.id)}>
-                                        
+
                                         {selectedProject ? "All Projects" : project.id}
                                         
                                     </span>

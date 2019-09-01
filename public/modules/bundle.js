@@ -245,10 +245,10 @@ function NavBar(props) {
 
 /***/ }),
 
-/***/ "./app/components/Other_Fields.js":
-/*!****************************************!*\
-  !*** ./app/components/Other_Fields.js ***!
-  \****************************************/
+/***/ "./app/components/Projects/Other_Fields.js":
+/*!*************************************************!*\
+  !*** ./app/components/Projects/Other_Fields.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -286,10 +286,10 @@ exports.default = OtherField;
 
 /***/ }),
 
-/***/ "./app/components/Project-Item.js":
-/*!****************************************!*\
-  !*** ./app/components/Project-Item.js ***!
-  \****************************************/
+/***/ "./app/components/Projects/Project-Item.js":
+/*!*************************************************!*\
+  !*** ./app/components/Projects/Project-Item.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -306,7 +306,7 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Other_Fields = __webpack_require__(/*! ./Other_Fields */ "./app/components/Other_Fields.js");
+var _Other_Fields = __webpack_require__(/*! ./Other_Fields */ "./app/components/Projects/Other_Fields.js");
 
 var _Other_Fields2 = _interopRequireDefault(_Other_Fields);
 
@@ -408,10 +408,10 @@ exports.default = Project;
 
 /***/ }),
 
-/***/ "./app/components/Projects.js":
-/*!************************************!*\
-  !*** ./app/components/Projects.js ***!
-  \************************************/
+/***/ "./app/components/Projects/Projects.js":
+/*!*********************************************!*\
+  !*** ./app/components/Projects/Projects.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -428,7 +428,7 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ProjectItem = __webpack_require__(/*! ./Project-Item */ "./app/components/Project-Item.js");
+var _ProjectItem = __webpack_require__(/*! ./Project-Item */ "./app/components/Projects/Project-Item.js");
 
 var _ProjectItem2 = _interopRequireDefault(_ProjectItem);
 
@@ -442,7 +442,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Projects = __webpack_require__(/*! ./projects.json */ "./app/components/projects.json");
+var Projects = __webpack_require__(/*! ./projects.json */ "./app/components/Projects/projects.json");
 
 var ProjectContainer = function (_React$PureComponent) {
     _inherits(ProjectContainer, _React$PureComponent);
@@ -628,10 +628,21 @@ exports.default = ProjectContainer;
 
 /***/ }),
 
-/***/ "./app/components/Tech.js":
-/*!********************************!*\
-  !*** ./app/components/Tech.js ***!
-  \********************************/
+/***/ "./app/components/Projects/projects.json":
+/*!***********************************************!*\
+  !*** ./app/components/Projects/projects.json ***!
+  \***********************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"id\":\"Redux Genie\",\"back_img\":\"https://authy.com/wp-content/uploads/npm-logo.png\",\"cat\":[\"FE\"],\"desc\":\"Published Node.js command line developer tool that automates writing and managing Redux code. Connects React component to Redux store with the React-Redux library using Babel parsing.   My contribution: Designed and implemented global command line methods; diffing routine to update store from yml file; asynchronous Mocha/Chai testing process to simulate command line inputs to the program and validate results; Babel parsing functionality.\",\"GH_url\":\"https://github.com/lovely-libras/redux-genie\",\"Technologies\":\"Node.js, Babel, Redux, React, Mocha/Chai, AWS EC2/S3\",\"other_fields\":[{\"Presentation at React NYC, May 23, 2019\":\"https://www.meetup.com/ReactNYC/events/260124464/\"},{\"Download NPM package\":\"https://www.npmjs.com/package/redux-genie\"},{\"Documentation Website\":\"http://redux-genie.net/\"}]},{\"id\":\"Maple\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/EverGrow/master/screenshot.png\",\"cat\":[\"FE\"],\"desc\":\"React Native iPad dashboard tool that helps teachers organize social emotional learning in the classroom. My contribution: bootstrapped React Native project and completed dependency installation and collaboration workflow with team member. Translated UX wireframes and visual design into React Native style API. Helped design total application structure. Pair programmed with team member.\",\"GH_url\":\"https://github.com/iamjoncannon/EverGrow\",\"Technologies\":\"React Native, XCode, Sketch\",\"other_fields\":[{\"Walkthrough of iPad app\":\"https://player.vimeo.com/video/354000529\"}]},{\"id\":\"Golang Stock Portfolio App\",\"back_img\":\"https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png\",\"cat\":[\"FS\"],\"desc\":\"React fullstack application that displays portfolio and stock prices in real time. Backend api in Golang, using PostgreSQL and Redis caching. Stateless authentication with JSON Web Tokens. Simulated “ACID” trade SQL transaction with prepared statements.\",\"GH_url\":\"https://github.com/iamjoncannon/StockApp\",\"Technologies\":\"Golang, Redis, React, PostgreSQL, JWT, AWS EC2, socket.io, IEX API, bcrypt\",\"other_fields\":[{\"Deployed Site\":\"http://ttp.joncannon.codes/\"}]},{\"id\":\"TownHall Slackbot\",\"cat\":[\"BE\"],\"desc\":\"Deployed a Slackbot on a Golang server to chat with the office during a monthly “Town Hall” meeting at internship.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"Golang, Slack API, Certbot (SSL), AWS EC2\",\"other_fields\":[]},{\"id\":\"Concept Parser\",\"cat\":[\"FS\"],\"desc\":\"React data visualization tool to render concepts contained within texts as graph structure. Deployed fullstack web application displays Hegel's Science of Logic, with ~5000 vertices and ~350,000 edges.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"React, D3 (react-force-graph), Node.js/Express, PM2, PostgreSQL, AWS EC2, Webpack\",\"other_fields\":[{\"Presentation\":\"https://www.youtube.com/watch?v=sPflAhvZgrU&feature=youtu.be\"},{\"Deployed Site\":\"http://concept.joncannon.codes/\"}]},{\"id\":\"FaceSwap Challenge\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/bermi_faceswap_challenge/master/jaylow.png\",\"cat\":[\"BE\"],\"desc\":\"Utilized Python Machine Learning library to swap the face of a woman in a cell phone video with Jennifer Lopez. ML training completed on AWS Deep Learning EC2 and S3. Wrote extended README detailing training process. Utilized Scrapy library to source 5000+ photographs from JLo fansites. Extensive use of Bash scripting to automate procedures on remote machine and video processing.\",\"GH_url\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge\",\"Technologies\":\"Python, Scrapy, Flask, AWS EC2/S3, Linux, Bash scripting\",\"other_fields\":[{\"Converted JLo vid\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge/blob/master/bermi_video_converted.mp4?raw=true\"}]},{\"id\":\"This Site- joncannon.codes\",\"cat\":[\"FE\"],\"desc\":\"React/SASS application, static deployed to an S3. Responsive design for mobile, tablet, and desktop viewports, with no CSS framework.\",\"GH_url\":\"https://github.com/iamjoncannon/secondJCCodes.git\",\"Technologies\":\"React, React Router, SASS, AWS (S3)\",\"other_fields\":[]},{\"id\":\"StoryTelling App\",\"cat\":[\"FS\"],\"desc\":\"Designed and built cross-platform “choose your own adventure” storytelling application prototype for web and AppleTV (tvOS). Successfully debugged and compiled application from less supported React Native tvOS codebase\",\"GH_url\":\"\",\"Technologies\":\"React Native, XCode, React, Redux, AWS S3\",\"other_fields\":[]},{\"id\":\"nodeLOM\",\"back_img\":\"https://upload.wikimedia.org/wikipedia/commons/b/bf/Ableton_Live_logo.png\",\"cat\":[\"BE\"],\"desc\":\"Open source driver to connect an Ableton Live session to Node.js server in real-time, utilizing socket.io and Max/MSP. Library included in Max/MSP’s example github repo, 🌟starred🌟 by developers on four continents.\",\"GH_url\":\"https://github.com/iamjoncannon/nodeLOM\",\"Technologies\":\"Node, Ableton Live, Max/MSP\",\"other_fields\":[]}]");
+
+/***/ }),
+
+/***/ "./app/components/Technology/Tech.js":
+/*!*******************************************!*\
+  !*** ./app/components/Technology/Tech.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -647,13 +658,13 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TechItem = __webpack_require__(/*! ./TechItem */ "./app/components/TechItem.js");
+var _TechItem = __webpack_require__(/*! ./TechItem */ "./app/components/Technology/TechItem.js");
 
 var _TechItem2 = _interopRequireDefault(_TechItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var technologies = __webpack_require__(/*! ./tech.json */ "./app/components/tech.json");
+var technologies = __webpack_require__(/*! ./tech.json */ "./app/components/Technology/tech.json");
 function Tech(props) {
 
   window.scrollTo(0, 0);
@@ -700,10 +711,10 @@ function Tech(props) {
 
 /***/ }),
 
-/***/ "./app/components/TechItem.js":
-/*!************************************!*\
-  !*** ./app/components/TechItem.js ***!
-  \************************************/
+/***/ "./app/components/Technology/TechItem.js":
+/*!***********************************************!*\
+  !*** ./app/components/Technology/TechItem.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -750,6 +761,17 @@ exports.default = Tech;
 
 /***/ }),
 
+/***/ "./app/components/Technology/tech.json":
+/*!*********************************************!*\
+  !*** ./app/components/Technology/tech.json ***!
+  \*********************************************/
+/*! exports provided: strong, experience, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"strong\":[{\"name\":\"Javascript\",\"img_url\":\"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png\"},{\"name\":\"React\",\"img_url\":\"react.png\"},{\"name\":\"Redux\",\"img_url\":\"redux.png\"},{\"name\":\"Node\",\"img_url\":\"node.png\"},{\"name\":\"Express\",\"img_url\":\"express.png\"},{\"name\":\"Git\",\"img_url\":\"github_icon.png\"}],\"experience\":[{\"name\":\"AWS\",\"img_url\":\"aws.png\"},{\"name\":\"Sass\",\"img_url\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2000px-Sass_Logo_Color.svg.png\"},{\"name\":\"Postgres\",\"img_url\":\"postgres.png\"},{\"name\":\"Python\",\"img_url\":\"https://www.stickpng.com/assets/images/5848152fcef1014c0b5e4967.png\"},{\"name\":\"Golang\",\"img_url\":\"https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png\"},{\"name\":\"Mocha\",\"img_url\":\"mocha.png\"},{\"name\":\"React Native\",\"img_url\":\"https://hackernoon.com/hn-images/1*ub1DguhAtkCLvhUGuVGr6w.png\"},{\"name\":\"Bash\",\"img_url\":\"bash.png\"},{\"name\":\"NPM\",\"img_url\":\"npm.png\"},{\"name\":\"Redis\",\"img_url\":\"https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png\"},{\"name\":\"XCode\",\"img_url\":\"https://cdn4.iconfinder.com/data/icons/logos-3/426/xcode-512.png\"},{\"name\":\"Babel\",\"img_url\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Babel_Logo.svg/1200px-Babel_Logo.svg.png\"},{\"name\":\"Webpack\",\"img_url\":\"https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png\"}]}");
+
+/***/ }),
+
 /***/ "./app/components/app.js":
 /*!*******************************!*\
   !*** ./app/components/app.js ***!
@@ -778,11 +800,11 @@ var _AboutMe = __webpack_require__(/*! ./AboutMe */ "./app/components/AboutMe.js
 
 var _AboutMe2 = _interopRequireDefault(_AboutMe);
 
-var _Tech = __webpack_require__(/*! ./Tech */ "./app/components/Tech.js");
+var _Tech = __webpack_require__(/*! ./Technology/Tech */ "./app/components/Technology/Tech.js");
 
 var _Tech2 = _interopRequireDefault(_Tech);
 
-var _Projects = __webpack_require__(/*! ./Projects */ "./app/components/Projects.js");
+var _Projects = __webpack_require__(/*! ./Projects/Projects */ "./app/components/Projects/Projects.js");
 
 var _Projects2 = _interopRequireDefault(_Projects);
 
@@ -804,28 +826,6 @@ var App = function App() {
 };
 
 exports.default = App;
-
-/***/ }),
-
-/***/ "./app/components/projects.json":
-/*!**************************************!*\
-  !*** ./app/components/projects.json ***!
-  \**************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("[{\"id\":\"Redux Genie\",\"back_img\":\"https://authy.com/wp-content/uploads/npm-logo.png\",\"cat\":[\"FE\"],\"desc\":\"Published Node.js command line developer tool that automates writing and managing Redux code. Connects React component to Redux store with the React-Redux library using Babel parsing.   My contribution: Designed and implemented global command line methods; diffing routine to update store from yml file; asynchronous Mocha/Chai testing process to simulate command line inputs to the program and validate results; Babel parsing functionality.\",\"GH_url\":\"https://github.com/lovely-libras/redux-genie\",\"Technologies\":\"Node.js, Babel, Redux, React, Mocha/Chai, AWS EC2/S3\",\"other_fields\":[{\"Presentation at React NYC, May 23, 2019\":\"https://www.meetup.com/ReactNYC/events/260124464/\"},{\"Download NPM package\":\"https://www.npmjs.com/package/redux-genie\"},{\"Documentation Website\":\"http://redux-genie.net/\"}]},{\"id\":\"Maple\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/EverGrow/master/screenshot.png\",\"cat\":[\"FE\"],\"desc\":\"React Native iPad dashboard tool that helps teachers organize social emotional learning in the classroom. My contribution: bootstrapped React Native project and completed dependency installation and collaboration workflow with team member. Translated UX wireframes and visual design into React Native style API. Helped design total application structure. Pair programmed with team member.\",\"GH_url\":\"https://github.com/iamjoncannon/EverGrow\",\"Technologies\":\"React Native, XCode, Sketch\",\"other_fields\":[{\"Walkthrough of iPad app\":\"https://player.vimeo.com/video/354000529\"}]},{\"id\":\"Golang Stock Portfolio App\",\"back_img\":\"https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png\",\"cat\":[\"FS\"],\"desc\":\"React fullstack application that displays portfolio and stock prices in real time. Backend api in Golang, using PostgreSQL and Redis caching. Stateless authentication with JSON Web Tokens. Simulated “ACID” trade SQL transaction with prepared statements.\",\"GH_url\":\"https://github.com/iamjoncannon/StockApp\",\"Technologies\":\"Golang, Redis, React, PostgreSQL, JWT, AWS EC2, socket.io, IEX API, bcrypt\",\"other_fields\":[{\"Deployed Site\":\"http://ttp.joncannon.codes/\"}]},{\"id\":\"TownHall Slackbot\",\"cat\":[\"BE\"],\"desc\":\"Deployed a Slackbot on a Golang server to chat with the office during a monthly “Town Hall” meeting at internship.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"Golang, Slack API, Certbot (SSL), AWS EC2\",\"other_fields\":[]},{\"id\":\"Concept Parser\",\"cat\":[\"FS\"],\"desc\":\"React data visualization tool to render concepts contained within texts as graph structure. Deployed fullstack web application displays Hegel's Science of Logic, with ~5000 vertices and ~350,000 edges.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"React, D3 (react-force-graph), Node.js/Express, PM2, PostgreSQL, AWS EC2, Webpack\",\"other_fields\":[{\"Presentation\":\"https://www.youtube.com/watch?v=sPflAhvZgrU&feature=youtu.be\"},{\"Deployed Site\":\"http://concept.joncannon.codes/\"}]},{\"id\":\"FaceSwap Challenge\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/bermi_faceswap_challenge/master/jaylow.png\",\"cat\":[\"BE\"],\"desc\":\"Utilized Python Machine Learning library to swap the face of a woman in a cell phone video with Jennifer Lopez. ML training completed on AWS Deep Learning EC2 and S3. Wrote extended README detailing training process. Utilized Scrapy library to source 5000+ photographs from JLo fansites. Extensive use of Bash scripting to automate procedures on remote machine and video processing.\",\"GH_url\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge\",\"Technologies\":\"Python, Scrapy, Flask, AWS EC2/S3, Linux, Bash scripting\",\"other_fields\":[{\"Converted JLo vid\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge/blob/master/bermi_video_converted.mp4?raw=true\"}]},{\"id\":\"This Site- joncannon.codes\",\"cat\":[\"FE\"],\"desc\":\"React/SASS application, static deployed to an S3. Responsive design for mobile, tablet, and desktop viewports, with no CSS framework.\",\"GH_url\":\"https://github.com/iamjoncannon/secondJCCodes.git\",\"Technologies\":\"React, React Router, SASS, AWS (S3)\",\"other_fields\":[]},{\"id\":\"StoryTelling App\",\"cat\":[\"FS\"],\"desc\":\"Designed and built cross-platform “choose your own adventure” storytelling application prototype for web and AppleTV (tvOS). Successfully debugged and compiled application from less supported React Native tvOS codebase\",\"GH_url\":\"\",\"Technologies\":\"React Native, XCode, React, Redux, AWS S3\",\"other_fields\":[]},{\"id\":\"nodeLOM\",\"back_img\":\"https://upload.wikimedia.org/wikipedia/commons/b/bf/Ableton_Live_logo.png\",\"cat\":[\"BE\"],\"desc\":\"Open source driver to connect an Ableton Live session to Node.js server in real-time, utilizing socket.io and Max/MSP. Library included in Max/MSP’s example github repo, 🌟starred🌟 by developers on four continents.\",\"GH_url\":\"https://github.com/iamjoncannon/nodeLOM\",\"Technologies\":\"Node, Ableton Live, Max/MSP\",\"other_fields\":[]}]");
-
-/***/ }),
-
-/***/ "./app/components/tech.json":
-/*!**********************************!*\
-  !*** ./app/components/tech.json ***!
-  \**********************************/
-/*! exports provided: strong, experience, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"strong\":[{\"name\":\"Javascript\",\"img_url\":\"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png\"},{\"name\":\"React\",\"img_url\":\"react.png\"},{\"name\":\"Redux\",\"img_url\":\"redux.png\"},{\"name\":\"Node\",\"img_url\":\"node.png\"},{\"name\":\"Express\",\"img_url\":\"express.png\"},{\"name\":\"Git\",\"img_url\":\"github_icon.png\"}],\"experience\":[{\"name\":\"AWS\",\"img_url\":\"aws.png\"},{\"name\":\"Sass\",\"img_url\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2000px-Sass_Logo_Color.svg.png\"},{\"name\":\"Postgres\",\"img_url\":\"postgres.png\"},{\"name\":\"Python\",\"img_url\":\"https://www.stickpng.com/assets/images/5848152fcef1014c0b5e4967.png\"},{\"name\":\"Golang\",\"img_url\":\"https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png\"},{\"name\":\"Mocha\",\"img_url\":\"mocha.png\"},{\"name\":\"React Native\",\"img_url\":\"https://hackernoon.com/hn-images/1*ub1DguhAtkCLvhUGuVGr6w.png\"},{\"name\":\"Bash\",\"img_url\":\"bash.png\"},{\"name\":\"NPM\",\"img_url\":\"npm.png\"},{\"name\":\"Redis\",\"img_url\":\"https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png\"},{\"name\":\"XCode\",\"img_url\":\"https://cdn4.iconfinder.com/data/icons/logos-3/426/xcode-512.png\"},{\"name\":\"Babel\",\"img_url\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Babel_Logo.svg/1200px-Babel_Logo.svg.png\"},{\"name\":\"Webpack\",\"img_url\":\"https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png\"}]}");
 
 /***/ }),
 
@@ -854,8 +854,6 @@ var _app2 = _interopRequireDefault(_app);
 var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-console.log(window.screen.width);
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRouterDom.BrowserRouter,

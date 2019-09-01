@@ -30,11 +30,7 @@
 }
 
 $max: max-device-width;
-// $max: max-width;
-
 $min: min-device-width;
-// $min: min-width;
-
 
 @mixin cell(){
     @media only screen and ($max: 600px) { 
@@ -55,11 +51,3 @@ $min: min-device-width;
         @content 
     };    //600px
 }
-
-// // big desktop- over 1600
-
-// @mixin desk(){
-//     @media only screen and (min-device-width: 1601px) { 
-//         @content 
-//     };    //600px
-// }

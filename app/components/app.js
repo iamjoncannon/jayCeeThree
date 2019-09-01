@@ -2,8 +2,8 @@ import React from 'react';
 import NavBar from './NavBar';
 import { Switch, Route } from 'react-router-dom'
 import AboutMe from './AboutMe'
-import Technologies from './Tech'
-import Projects from './Projects'
+import Technologies from './Technology/Tech'
+import Projects from './Projects/Projects'
 
 const App = () => {
   return (
