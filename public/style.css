@@ -12,7 +12,7 @@
       font-size: 4rem; } }
 
 .caps-text {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase; }
 
 .section-text {
@@ -29,7 +29,7 @@
       font-size: 3rem; } }
 
 .copy-text {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   text-align: justify; }
   @media only screen and (max-device-width: 600px) {
     .copy-text {
@@ -39,7 +39,7 @@
       font-size: 2rem; } }
 
 .desc-text {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   text-align: justify; }
   @media only screen and (max-device-width: 600px) {
     .desc-text {
@@ -211,7 +211,7 @@
         .tech .tech-list-item img {
           width: 15rem; } }
     .tech .tech-list-item span {
-      color: rgba(255, 255, 255, 0.7); }
+      color: rgba(255, 255, 255, 0.9); }
       @media only screen and (max-device-width: 600px) {
         .tech .tech-list-item span {
           font-size: 4rem; } }
@@ -273,7 +273,7 @@
           align-items: center;
           justify-content: space-around;
           width: 90%;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.9);
           font-size: 1.5rem; }
           .projects-container .project-nav .project-selector span {
             margin-bottom: .5vh;
@@ -316,7 +316,7 @@
       position: relative;
       left: 25vh; } }
   .project-each a {
-    color: rgba(255, 255, 255, 0.7); }
+    color: rgba(255, 255, 255, 0.9); }
     .project-each a:hover {
       opacity: .5; }
   @media only screen and (max-device-width: 600px) {
@@ -340,7 +340,7 @@
         position: relative;
         top: .5vh; } }
   .project-each .title-text {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     width: 100%;
     cursor: pointer; }
     .project-each .title-text:hover {
@@ -354,12 +354,12 @@
     width: 80%; }
     @media only screen and (max-device-width: 600px) {
       .project-each .desc-text {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.9);
         margin-top: 2vh;
         font-size: 2.75vh; } }
     @media only screen and (min-device-width: 601px) {
       .project-each .desc-text {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.9);
         font-size: 2.75vh; } }
 
 html {
