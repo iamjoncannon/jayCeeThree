@@ -2,7 +2,7 @@ import React from "react";
 import Project from './Project-Item'
 let Projects = require('./projects.json')
 
-class ProjectContainer extends React.Component {
+class ProjectContainer extends React.PureComponent {
 
     constructor(props){
         super(props)
@@ -23,7 +23,7 @@ class ProjectContainer extends React.Component {
             let newCategoryFilter = [...CategoryFilter].filter( currentCat => currentCat !== cat)
             
             this.setState({
-
+                selectedProject : null,
                 CategoryFilter : newCategoryFilter
             })
 
@@ -31,6 +31,7 @@ class ProjectContainer extends React.Component {
         else{ // add to the filter
 
             this.setState({
+                selectedProject : null,
                 CategoryFilter : [...CategoryFilter, cat]
             })
         }
@@ -54,8 +55,6 @@ class ProjectContainer extends React.Component {
     }
 
     render(){
-
-        console.log(window.outerWidth)
 
         window.scrollTo(0, 0);
 
@@ -115,10 +114,11 @@ class ProjectContainer extends React.Component {
                         { window.outerWidth > 600 && 
                             <div className="project-selector">
 
-                            {projects.map(project=>{
+                            {projects.map( (project, i) =>{
                                 
                                 return(
-                                    <span onClick={()=>this.handleProjectSelect(project.id)}>
+                                    <span key={i} onClick={()=>this.handleProjectSelect(project.id)}>
+                                        
                                         {selectedProject ? "All Projects" : project.id}
                                         
                                     </span>
@@ -126,7 +126,6 @@ class ProjectContainer extends React.Component {
                             })}
                             
                             </div>
-                        
                         }
 
                     </div>

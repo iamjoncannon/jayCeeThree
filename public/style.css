@@ -39,7 +39,8 @@
       font-size: 2rem; } }
 
 .desc-text {
-  color: rgba(255, 255, 255, 0.7); }
+  color: rgba(255, 255, 255, 0.7);
+  text-align: justify; }
   @media only screen and (max-device-width: 600px) {
     .desc-text {
       font-size: 3.5rem; } }
@@ -52,7 +53,8 @@
   position: sticky;
   top: 0vh;
   background-color: #1B1B1B;
-  z-index: 2; }
+  z-index: 2;
+  border-bottom: solid rgba(255, 255, 255, 0.1) 0.25px; }
   @media only screen and (max-device-width: 600px) {
     .header {
       padding-top: 2vh;
@@ -122,9 +124,9 @@
     .icons i:hover {
       opacity: .5; }
   .icons img {
-    width: 4.5rem;
+    width: 2.75rem;
     position: relative;
-    top: .4vh; }
+    top: .2vh; }
     .icons img:hover {
       opacity: .5; }
 
@@ -227,6 +229,11 @@
     @media only screen and (max-device-width: 600px) {
       .projects-container .project-nav {
         margin-bottom: 2vh; } }
+    @media only screen and (min-device-width: 900px) {
+      .projects-container .project-nav {
+        position: fixed;
+        left: 3vh;
+        min-width: 10rem; } }
     .projects-container .project-nav > span {
       margin-bottom: -1vh; }
     .projects-container .project-nav .cats {
@@ -250,6 +257,12 @@
           margin-top: 1vh; }
           .projects-container .project-nav .cats .caps-text {
             margin-bottom: 2vh; } }
+      @media only screen and (min-device-width: 900px) {
+        .projects-container .project-nav .cats {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; } }
     .projects-container .project-nav .project-selector {
       cursor: pointer; }
       @media only screen and (min-device-width: 601px) {
@@ -270,6 +283,17 @@
             background-color: rgba(0, 0, 0, 0.1); }
             .projects-container .project-nav .project-selector span:hover {
               opacity: .5; } }
+      @media only screen and (min-device-width: 900px) {
+        .projects-container .project-nav .project-selector {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%; }
+          .projects-container .project-nav .project-selector span {
+            font-size: 1.5rem;
+            white-space: nowrap;
+            margin-bottom: 1rem; } }
 
 .project-each {
   display: flex;
@@ -286,6 +310,11 @@
       margin-bottom: 3vh; }
       .project-each span {
         margin-top: 2vh; } }
+  @media only screen and (min-device-width: 900px) {
+    .project-each {
+      width: 80%;
+      position: relative;
+      left: 25vh; } }
   .project-each a {
     color: rgba(255, 255, 255, 0.7); }
     .project-each a:hover {

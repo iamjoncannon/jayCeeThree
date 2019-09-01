@@ -35,8 +35,8 @@ export default function NavBar (props){
 
       <div className="icons">
 
-        <a href="https://github.com/iamjoncannon" target="_blank" style={{order: "5"}}><i id="logo" className="fab fa-github fa-5x nav-link-right nav-desktop" /></a>
-        <a href="https://www.linkedin.com/in/iamjoncannon/" target="_blank" style={{order: "6"}}><i id="logo" className="fab fa-linkedin fa-5x nav-link-right nav-desktop" /> </a>
+        <a href="https://github.com/iamjoncannon" target="_blank" style={{order: "5"}}><i id="logo" className="fab fa-github fa-3x nav-link-right nav-desktop" /></a>
+        <a href="https://www.linkedin.com/in/iamjoncannon/" target="_blank" style={{order: "6"}}><i id="logo" className="fab fa-linkedin fa-3x nav-link-right nav-desktop" /> </a>
         <a href="https://globally.ltd/4" target="_blank" style={{order: "7"}}><img src="https://jayceecodesphotos.s3.amazonaws.com/globallyLTD.jpg" className="fab nav-link-right nav-desktop nav-icon-globally"/></a>
       </div>
     

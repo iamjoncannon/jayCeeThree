@@ -7,6 +7,7 @@
         @include flex-center-column;
 
         @include cell(){
+
             margin-bottom: 2vh;
         }
     
@@ -14,9 +15,19 @@
             
         }
 
-        >span {
-            margin-bottom: -1vh
+        @include desk(){
+  
+            position: fixed;
+            left: 3vh;      
+            min-width: 10rem;  
         }
+
+        >span {
+
+            margin-bottom: -1vh;
+        }
+
+        // eg fullstack, front-end
 
         .cats {
 
@@ -35,6 +46,7 @@
             }
         
             @include tab(){
+
                 display: flex;
                 width: 100%;
                 justify-content: space-evenly;
@@ -47,6 +59,8 @@
             }
 
             @include desk(){
+
+                @include flex-center-column;
 
                 
             }
@@ -80,6 +94,20 @@
                     }
                 }
             }
+
+            @include desk(){
+
+                @include flex-center-column;
+                width: 100%;
+
+                span {
+                    font-size: 1.5rem;
+                    white-space: nowrap;
+                    margin-bottom: 1rem;
+                }
+
+
+            }
         }
     }
 }
@@ -105,6 +133,13 @@
         span {
             margin-top: 2vh;
         }
+    }
+
+    @include desk(){
+
+        width: 80%;
+        position: relative;
+        left: 25vh;
     }
 
     a {

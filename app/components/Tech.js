@@ -15,25 +15,29 @@ export default function Tech (props){
       <span className="desc-text">Technologies used in previous projects</span>
       
       <span className="section-text">Strong</span>
-      <span className="desc-text">
+      {/* <span className="desc-text">
         Used in multiple previous projects- very familiar and capable 
-      </span>
+      </span> */}
       <div className="tech-list">
 
-                    { technologies.strong.map(thisTech => <TechItem key={thisTech.id} thisTech={thisTech}/> 
-                            
-                    ) }  
+        { technologies.strong.map(thisTech => <TechItem key={thisTech.id} thisTech={thisTech}/> 
+                
+        ) }  
+
       </div>
 
       <span className="section-text">Experience</span>
-      <span className="desc-text">
+
+      {/* <span className="desc-text">
       Used in previous projects- some familiarity and experience  
-      </span>
+      </span> */}
+      
       <div className="tech-list">
 
-                    { technologies.experience.map(thisTech => <TechItem key={thisTech.id} thisTech={thisTech}/> 
-                            
-                    ) }  
+        { technologies.experience.map( (thisTech, i) => <TechItem key={i} thisTech={thisTech}/> 
+                
+        ) } 
+
       </div>
    
     </div>

@@ -8,6 +8,7 @@
     top: 0vh;
     background-color: $pale-black;
     z-index: 2;
+    border-bottom: solid $greyish-two .25px;
     
     @include cell(){
         padding-top: 2vh;
@@ -15,11 +16,7 @@
         margin-bottom: 3vh;
         margin-top: 3rem;
     }
-
-    @include tab(){
-        
-    }
-        
+ 
     .logo {
         display: flex;
         flex-direction: column;
@@ -119,9 +116,9 @@
 
     img {
 
-        width: 4.5rem;
+        width: 2.75rem;
         position: relative;
-        top: .4vh;
+        top: .2vh;
 
         &:hover{
             opacity: .5;

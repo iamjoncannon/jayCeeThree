@@ -226,12 +226,12 @@ function NavBar(props) {
       _react2.default.createElement(
         'a',
         { href: 'https://github.com/iamjoncannon', target: '_blank', style: { order: "5" } },
-        _react2.default.createElement('i', { id: 'logo', className: 'fab fa-github fa-5x nav-link-right nav-desktop' })
+        _react2.default.createElement('i', { id: 'logo', className: 'fab fa-github fa-3x nav-link-right nav-desktop' })
       ),
       _react2.default.createElement(
         'a',
         { href: 'https://www.linkedin.com/in/iamjoncannon/', target: '_blank', style: { order: "6" } },
-        _react2.default.createElement('i', { id: 'logo', className: 'fab fa-linkedin fa-5x nav-link-right nav-desktop' }),
+        _react2.default.createElement('i', { id: 'logo', className: 'fab fa-linkedin fa-3x nav-link-right nav-desktop' }),
         ' '
       ),
       _react2.default.createElement(
@@ -444,8 +444,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Projects = __webpack_require__(/*! ./projects.json */ "./app/components/projects.json");
 
-var ProjectContainer = function (_React$Component) {
-    _inherits(ProjectContainer, _React$Component);
+var ProjectContainer = function (_React$PureComponent) {
+    _inherits(ProjectContainer, _React$PureComponent);
 
     function ProjectContainer(props) {
         _classCallCheck(this, ProjectContainer);
@@ -464,13 +464,14 @@ var ProjectContainer = function (_React$Component) {
                 });
 
                 _this.setState({
-
+                    selectedProject: null,
                     CategoryFilter: newCategoryFilter
                 });
             } else {
                 // add to the filter
 
                 _this.setState({
+                    selectedProject: null,
                     CategoryFilter: [].concat(_toConsumableArray(CategoryFilter), [cat])
                 });
             }
@@ -503,8 +504,6 @@ var ProjectContainer = function (_React$Component) {
         key: 'render',
         value: function render() {
             var _this2 = this;
-
-            console.log(window.outerWidth);
 
             window.scrollTo(0, 0);
 
@@ -602,11 +601,11 @@ var ProjectContainer = function (_React$Component) {
                     window.outerWidth > 600 && _react2.default.createElement(
                         'div',
                         { className: 'project-selector' },
-                        projects.map(function (project) {
+                        projects.map(function (project, i) {
 
                             return _react2.default.createElement(
                                 'span',
-                                { onClick: function onClick() {
+                                { key: i, onClick: function onClick() {
                                         return _this2.handleProjectSelect(project.id);
                                     } },
                                 selectedProject ? "All Projects" : project.id
@@ -623,7 +622,7 @@ var ProjectContainer = function (_React$Component) {
     }]);
 
     return ProjectContainer;
-}(_react2.default.Component);
+}(_react2.default.PureComponent);
 
 exports.default = ProjectContainer;
 
@@ -678,11 +677,6 @@ function Tech(props) {
       'Strong'
     ),
     _react2.default.createElement(
-      'span',
-      { className: 'desc-text' },
-      'Used in multiple previous projects- very familiar and capable'
-    ),
-    _react2.default.createElement(
       'div',
       { className: 'tech-list' },
       technologies.strong.map(function (thisTech) {
@@ -695,15 +689,10 @@ function Tech(props) {
       'Experience'
     ),
     _react2.default.createElement(
-      'span',
-      { className: 'desc-text' },
-      'Used in previous projects- some familiarity and experience'
-    ),
-    _react2.default.createElement(
       'div',
       { className: 'tech-list' },
-      technologies.experience.map(function (thisTech) {
-        return _react2.default.createElement(_TechItem2.default, { key: thisTech.id, thisTech: thisTech });
+      technologies.experience.map(function (thisTech, i) {
+        return _react2.default.createElement(_TechItem2.default, { key: i, thisTech: thisTech });
       })
     )
   );
@@ -825,7 +814,7 @@ exports.default = App;
 /*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"id\":\"Redux Genie\",\"back_img\":\"https://authy.com/wp-content/uploads/npm-logo.png\",\"cat\":[\"FE\"],\"desc\":\"Published Node.js command line developer tool that automates writing and managing Redux code. Connects React component to Redux store with the React-Redux library using Babel parsing.   My contribution: Designed and implemented global command line methods; diffing routine to update store from yml file; asynchronous Mocha/Chai testing process to simulate command line inputs to the program and validate results; Babel parsing functionality.\",\"GH_url\":\"https://github.com/lovely-libras/redux-genie\",\"Technologies\":\"Node.js, Babel, Redux, React, Mocha/Chai, AWS EC2/S3\",\"other_fields\":[{\"Presentation at React NYC, May 23, 2019\":\"https://www.meetup.com/ReactNYC/events/260124464/\"},{\"Download NPM package\":\"https://www.npmjs.com/package/redux-genie\"},{\"Documentation Website\":\"http://redux-genie.net/\"}]},{\"id\":\"Maple\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/EverGrow/master/screenshot.png\",\"cat\":[\"FE\"],\"desc\":\"React Native iPad dashboard tool that helps teachers organize social emotional learning in the classroom. My contribution: bootstrapped React Native project and completed dependency installation and collaboration workflow with team member. Translated UX wireframes and visual design into React Native style API. Helped design total application structure. Pair programmed with team member.\",\"GH_url\":\"https://github.com/iamjoncannon/EverGrow\",\"Technologies\":\"React Native, XCode, Sketch\",\"other_fields\":[{\"Walkthrough of iPad app\":\"https://player.vimeo.com/video/354000529\"}]},{\"id\":\"Golang Stock Portfolio App\",\"back_img\":\"https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png\",\"cat\":[\"FE\",\"BE\",\"FS\"],\"desc\":\"React fullstack application that displays portfolio and stock prices in real time. Backend api in Golang, using PostgreSQL and Redis caching. Stateless authentication with JSON Web Tokens. Simulated “ACID” trade SQL transaction with prepared statements.\",\"GH_url\":\"https://github.com/iamjoncannon/StockApp\",\"Technologies\":\"Golang, Redis, React, PostgreSQL, JWT, AWS EC2, socket.io, IEX API, bcrypt\",\"other_fields\":[{\"Deployed Site\":\"http://ttp.joncannon.codes/\"}]},{\"id\":\"TownHall Slackbot\",\"back_img\":\"https://cdn.freebiesupply.com/logos/large/2x/slack-logo-icon.png\",\"cat\":[\"BE\"],\"desc\":\"Deployed a Slackbot on a Golang server to chat with the office during a monthly “Town Hall” meeting at internship.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"Golang, Slack API, Certbot (SSL), AWS EC2\",\"other_fields\":[]},{\"id\":\"Concept Parser\",\"cat\":[\"FE\",\"BE\",\"FS\"],\"desc\":\"React data visualization tool to render concepts contained within texts as graph structure. Deployed fullstack web application displays Hegel's Science of Logic, with ~5000 vertices and ~350,000 edges.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"React, D3 (react-force-graph), Node.js/Express, PM2, PostgreSQL, AWS EC2, Webpack\",\"other_fields\":[{\"Presentation\":\"https://www.youtube.com/watch?v=sPflAhvZgrU&feature=youtu.be\"},{\"Deployed Site\":\"http://concept.joncannon.codes/\"}]},{\"id\":\"FaceSwap Challenge\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/bermi_faceswap_challenge/master/jaylow.png\",\"cat\":[\"BE\"],\"desc\":\"Utilized Python Machine Learning library to swap the face of a woman in a cell phone video with Jennifer Lopez. ML training completed on AWS Deep Learning EC2 and S3. Wrote extended README detailing training process. Utilized Scrapy library to source 5000+ photographs from JLo fansites. Extensive use of Bash scripting to automate procedures on remote machine and video processing.\",\"GH_url\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge\",\"Technologies\":\"Python, Scrapy, Flask, AWS EC2/S3, Linux, Bash scripting\",\"other_fields\":[{\"Converted JLo vid\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge/blob/master/bermi_video_converted.mp4?raw=true\"}]},{\"id\":\"This Site- joncannon.codes\",\"cat\":[\"FE\"],\"desc\":\"React/SASS application, static deployed to an S3.\",\"GH_url\":\"https://github.com/iamjoncannon/secondJCCodes.git\",\"Technologies\":\"React, React Router, SASS, AWS (S3)\",\"other_fields\":[]},{\"id\":\"StoryTelling App\",\"cat\":[\"FE\",\"BE\",\"FS\"],\"desc\":\"Designed and built cross-platform “choose your own adventure” storytelling application prototype for web and AppleTV (tvOS). Successfully debugged and compiled application from less supported React Native tvOS codebase\",\"GH_url\":\"\",\"Technologies\":\"React Native, XCode, React, Redux, AWS S3\",\"other_fields\":[]},{\"id\":\"nodeLOM\",\"back_img\":\"https://upload.wikimedia.org/wikipedia/commons/b/bf/Ableton_Live_logo.png\",\"cat\":[\"BE\"],\"desc\":\"Open source driver to connect an Ableton Live session to Node.js server in real-time, utilizing socket.io and Max/MSP. Library included in Max/MSP’s example github repo, 🌟starred🌟 by developers on four continents.\",\"GH_url\":\"https://github.com/iamjoncannon/nodeLOM\",\"Technologies\":\"Node, Ableton Live, Max/MSP\",\"other_fields\":[]}]");
+module.exports = JSON.parse("[{\"id\":\"Redux Genie\",\"back_img\":\"https://authy.com/wp-content/uploads/npm-logo.png\",\"cat\":[\"FE\"],\"desc\":\"Published Node.js command line developer tool that automates writing and managing Redux code. Connects React component to Redux store with the React-Redux library using Babel parsing.   My contribution: Designed and implemented global command line methods; diffing routine to update store from yml file; asynchronous Mocha/Chai testing process to simulate command line inputs to the program and validate results; Babel parsing functionality.\",\"GH_url\":\"https://github.com/lovely-libras/redux-genie\",\"Technologies\":\"Node.js, Babel, Redux, React, Mocha/Chai, AWS EC2/S3\",\"other_fields\":[{\"Presentation at React NYC, May 23, 2019\":\"https://www.meetup.com/ReactNYC/events/260124464/\"},{\"Download NPM package\":\"https://www.npmjs.com/package/redux-genie\"},{\"Documentation Website\":\"http://redux-genie.net/\"}]},{\"id\":\"Maple\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/EverGrow/master/screenshot.png\",\"cat\":[\"FE\"],\"desc\":\"React Native iPad dashboard tool that helps teachers organize social emotional learning in the classroom. My contribution: bootstrapped React Native project and completed dependency installation and collaboration workflow with team member. Translated UX wireframes and visual design into React Native style API. Helped design total application structure. Pair programmed with team member.\",\"GH_url\":\"https://github.com/iamjoncannon/EverGrow\",\"Technologies\":\"React Native, XCode, Sketch\",\"other_fields\":[{\"Walkthrough of iPad app\":\"https://player.vimeo.com/video/354000529\"}]},{\"id\":\"Golang Stock Portfolio App\",\"back_img\":\"https://www.idmworks.com/wp-content/uploads/2015/04/golang-250.png\",\"cat\":[\"FS\"],\"desc\":\"React fullstack application that displays portfolio and stock prices in real time. Backend api in Golang, using PostgreSQL and Redis caching. Stateless authentication with JSON Web Tokens. Simulated “ACID” trade SQL transaction with prepared statements.\",\"GH_url\":\"https://github.com/iamjoncannon/StockApp\",\"Technologies\":\"Golang, Redis, React, PostgreSQL, JWT, AWS EC2, socket.io, IEX API, bcrypt\",\"other_fields\":[{\"Deployed Site\":\"http://ttp.joncannon.codes/\"}]},{\"id\":\"TownHall Slackbot\",\"cat\":[\"BE\"],\"desc\":\"Deployed a Slackbot on a Golang server to chat with the office during a monthly “Town Hall” meeting at internship.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"Golang, Slack API, Certbot (SSL), AWS EC2\",\"other_fields\":[]},{\"id\":\"Concept Parser\",\"cat\":[\"FS\"],\"desc\":\"React data visualization tool to render concepts contained within texts as graph structure. Deployed fullstack web application displays Hegel's Science of Logic, with ~5000 vertices and ~350,000 edges.\",\"GH_url\":\"https://github.com/iamjoncannon/goSSL\",\"Technologies\":\"React, D3 (react-force-graph), Node.js/Express, PM2, PostgreSQL, AWS EC2, Webpack\",\"other_fields\":[{\"Presentation\":\"https://www.youtube.com/watch?v=sPflAhvZgrU&feature=youtu.be\"},{\"Deployed Site\":\"http://concept.joncannon.codes/\"}]},{\"id\":\"FaceSwap Challenge\",\"back_img\":\"https://raw.githubusercontent.com/iamjoncannon/bermi_faceswap_challenge/master/jaylow.png\",\"cat\":[\"BE\"],\"desc\":\"Utilized Python Machine Learning library to swap the face of a woman in a cell phone video with Jennifer Lopez. ML training completed on AWS Deep Learning EC2 and S3. Wrote extended README detailing training process. Utilized Scrapy library to source 5000+ photographs from JLo fansites. Extensive use of Bash scripting to automate procedures on remote machine and video processing.\",\"GH_url\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge\",\"Technologies\":\"Python, Scrapy, Flask, AWS EC2/S3, Linux, Bash scripting\",\"other_fields\":[{\"Converted JLo vid\":\"https://github.com/iamjoncannon/bermi_faceswap_challenge/blob/master/bermi_video_converted.mp4?raw=true\"}]},{\"id\":\"This Site- joncannon.codes\",\"cat\":[\"FE\"],\"desc\":\"React/SASS application, static deployed to an S3. Responsive design for mobile, tablet, and desktop viewports, with no CSS framework.\",\"GH_url\":\"https://github.com/iamjoncannon/secondJCCodes.git\",\"Technologies\":\"React, React Router, SASS, AWS (S3)\",\"other_fields\":[]},{\"id\":\"StoryTelling App\",\"cat\":[\"FS\"],\"desc\":\"Designed and built cross-platform “choose your own adventure” storytelling application prototype for web and AppleTV (tvOS). Successfully debugged and compiled application from less supported React Native tvOS codebase\",\"GH_url\":\"\",\"Technologies\":\"React Native, XCode, React, Redux, AWS S3\",\"other_fields\":[]},{\"id\":\"nodeLOM\",\"back_img\":\"https://upload.wikimedia.org/wikipedia/commons/b/bf/Ableton_Live_logo.png\",\"cat\":[\"BE\"],\"desc\":\"Open source driver to connect an Ableton Live session to Node.js server in real-time, utilizing socket.io and Max/MSP. Library included in Max/MSP’s example github repo, 🌟starred🌟 by developers on four continents.\",\"GH_url\":\"https://github.com/iamjoncannon/nodeLOM\",\"Technologies\":\"Node, Ableton Live, Max/MSP\",\"other_fields\":[]}]");
 
 /***/ }),
 
@@ -865,6 +854,8 @@ var _app2 = _interopRequireDefault(_app);
 var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.log(window.screen.width);
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRouterDom.BrowserRouter,
