@@ -93,7 +93,7 @@
         "id": "nodeLOM",
         "back_img": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Ableton_Live_logo.png",
         "cat": ["BE"],
-        "desc": "Open source driver to connect an Ableton Live session to Node.js server in real-time, utilizing socket.io and Max/MSP. Library included in Max/MSP’s example github repo, 🌟starred🌟 by developers on four continents.",
+        "desc": "Open source driver to connect an Ableton Live session to Node.js server in real-time, utilizing socket.io and Max/MSP. Library included in Max/MSPs example github repo, starred by developers on four continents.",
         "GH_url": "https://github.com/iamjoncannon/nodeLOM",
         "Technologies": "Node, Ableton Live, Max/MSP",
         "other_fields": [
